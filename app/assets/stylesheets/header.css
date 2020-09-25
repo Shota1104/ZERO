@@ -2,6 +2,18 @@
   background-color: darkgrey;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.title{
+  font-size: 30px;
+  margin-right: 800px;
+}
+
+.lists-right {
+  display: flex;
+  align-items: center;
 }
 
 .login {
