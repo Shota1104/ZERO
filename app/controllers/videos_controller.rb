@@ -4,11 +4,11 @@ class VideosController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @video = Video.new
   end
 
   def create
-
+    @video = Video.new(create_params)
   end
 
   def destroy
