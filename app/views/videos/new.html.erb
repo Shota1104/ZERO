@@ -1,0 +1,66 @@
+<header class="post_top">
+<%="投稿ページ"%>
+</header>
+<%= form_with model: @video, local: true do |f| %>
+<div class="video-title">タイトル
+ <div class="new-items">
+      <div class="weight-bold-text">
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"items-text", id:"name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+    </div>
+</div>
+
+<div class="movie">動画投稿
+<div class="img-upload">
+      <div class="weight-bold-text">
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :video, id:"item-video" %>
+      </div>
+    </div>
+</div>
+
+<div class="expalanation">動画説明
+ <div class="items-explain">
+        <div class="weight-bold-text">
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explanation, class:"items-text", id:"explanation", placeholder:"商品の説明" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+</div>
+
+<div class="video-category">カテゴリー
+<%= f.collection_select(:category_id, Category.all, :id, :name, {class:"select-box", id:"item-category"}) %>
+</div>
+
+<div class="thumbnail">サムネイル
+<div class="img-upload">
+      <div class="weight-bold-text">
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+</div>
+
+<div class="price">価格
+　</div>
+  <span class="sell-yen">¥</span>
+  <%= f.text_field :price, class:"price-input", id:"price", placeholder:"例）" %>
+  </div>
+</div>
+
+<div class="post-btn-contents">
+<%= f.submit "投稿する" ,class:"post-btn" %> 
+<%=link_to 'もどる', root_path, class:"back-btn" %>
+</div>
+<% end %>

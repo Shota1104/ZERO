@@ -1,12 +1,13 @@
 .main_items {
   display: flex;
 }
-.category {
-  background-color: #863a91;
-  width: 200px;
-  height: 100vh;
-}
+
 .videos {
   background-color: #ffffff;
   width: calc(100% - 200px);
+}
+
+.main_category_list{
+  display: block;
+  
 }
