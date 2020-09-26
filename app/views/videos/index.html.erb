@@ -7,7 +7,14 @@
  
  <div class="videos">
   <%= "投稿ビデオ" %>
-  <%# <%= image_tag message.image.variant(resize:'500x500'), class: 'message-image' if message.image.attached?%> 
+    <% @video.each do |video|%>
+    <li class='list'>
+      <%= link_to video_path(video.id) do %>
+      <div class='item-img-content'>
+      <%= image_tag video.image.variant(resize:'500x500'), class: 'message-image' if video.image.attached?%> 
+       <% end %>
+    <% end %>
+  
   <ul class='main_category_list'>
   <li class='main_music'>
   <%= "音楽"%>
@@ -23,6 +30,7 @@
   <%= "ゲーム"%>
   <li class='main_vlog'>
   <%= "vlog"%>
+
 </div>
 
 
